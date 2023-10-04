@@ -25,7 +25,7 @@ title Pallet AMR to Setup Station
 
 ' group Setup Station Incoming Lane
 '     aei -> server     : READY_FOR_PALLET_LOAD
-    
+
 '     server -> amr     : <color blue>AMR_START_ROLLERS
 '     server -> aei     : START_PALLET_LOAD
 '     aei -> setup  : PALLET_TRANSFER_IN_BUSY

@@ -9,7 +9,7 @@ Remote Services Application (RSS) is the cloud-based system component of the Rem
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4_Container>
 
 LAYOUT_WITH_LEGEND()
 

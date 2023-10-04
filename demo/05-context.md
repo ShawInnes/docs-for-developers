@@ -1,8 +1,8 @@
 # Context
 
 ```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+@startuml Context
+!include <C4/C4_Context>
 
 title Remote Services System Context
 

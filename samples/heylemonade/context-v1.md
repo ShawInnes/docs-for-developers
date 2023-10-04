@@ -5,8 +5,8 @@
 
 title Hey Lemonade - System Context Diagram
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4_Context>
+!include <C4/C4_Container>
 
 LAYOUT_WITH_LEGEND()
 
