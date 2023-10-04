@@ -1,0 +1,7 @@
+
+@startjson Categories
+{"items":[
+    {"name":"All the relationships","slug":"relationships","icon":"relationships.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":1},{"name":"Big life stress","slug":"life-stress","icon":"life-stress.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":2},{"name":"Looking after you","slug":"self-care","icon":"self-care.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":4},{"name":"Navigating the feels","slug":"feelings","icon":"feelings.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":5},{"name":"Pepping domesticity","slug":"domesticity","icon":"domesticity.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":6},{"name":"Pump-ups","slug":"pump-ups","icon":"pump-ups.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":7},{"name":"Work pressure","slug":"work","icon":"work.svg","showUnsubscribed":true,"showSubscribed":true,"sortOrder":8},{"name":"Featured pep","slug":"daily-pep","icon":"daily-pep.svg","showUnsubscribed":false,"showSubscribed":true,"sortOrder":9}],
+    "currentPage":0,"totalPages":1,"totalItems":8,"executionTime":61
+    }
+@enduml

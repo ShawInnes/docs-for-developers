@@ -1,0 +1,17 @@
+site_name: My Docs
+
+docs_dir: docs
+
+plugins:
+  - search
+  # - awesome-pages:
+  #     collapse_single_pages: false
+  # - section-index
+  - plantuml:
+      puml_url: http://localhost:8080
+      # puml_url: https://www.plantuml.com/plantuml/
+      num_workers: 8
+      puml_keyword: plantuml
+
+# theme:
+#   name: material
