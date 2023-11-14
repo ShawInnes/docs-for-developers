@@ -1,0 +1,32 @@
+@startuml Sequence Demo
+
+server -> aei     : BEGIN_PALLET_LOAD_SAGA
+aei -> server     : PALLET_LOAD_SAGA_IN_PROGRESS
+
+server -> amr     : AMR_START
+note over server, amr: AMR moves to Setup Station lane and docks
+
+amr -> server     : DOCKED_AT_TARGET
+
+server -> aei      : REQUEST_PALLET_LOAD
+aei -> setup       : Lane[<lane_id>].TransferInReq true
+aei -> server      : WAITING_FOR_PLC_LOAD_READY
+note over aei,setup: Start rollers on the lane
+setup -> aei       : Lane[<lane_id>].TransferInRdy true
+
+group Setup Station Incoming Lane
+    aei -> server     : READY_FOR_PALLET_LOAD
+
+    server -> amr      : AMR_START_ROLLERS
+    server -> aei      : START_PALLET_LOAD
+    aei -> setup       : PALLET_TRANSFER_IN_BUSY
+
+    setup -> aei       : Lane[<lane_id>].TransferInComplete true
+    aei -> server      : PALLET_LOAD_COMPLETED
+
+    server -> amr        : END_PALLET_LOAD_SAGA
+    note over server, amr: AMR undocks and departs
+
+    aei -> server     : READY
+end
+@enduml

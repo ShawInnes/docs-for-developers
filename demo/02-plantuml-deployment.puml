@@ -1,0 +1,18 @@
+@startuml Deployment Demo
+
+database postgres
+collections minio
+actor user
+
+user --> [traefik]
+
+[traefik] --> [keycloak] 
+[traefik] --> [directus]
+[traefik] --> [traefikapi]
+
+[keycloak] --> [postgres]
+[directus] --> [postgres]
+
+[directus] --> [minio]
+
+@enduml

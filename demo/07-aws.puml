@@ -1,0 +1,49 @@
+@startuml Deployment Diagram
+
+!$AWS_DARK = true
+
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v16.0/dist
+
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/AWSSimplified.puml
+
+!include AWSPuml/General/AuthenticatedUser.puml
+!include AWSPuml/General/Chat.puml
+!include AWSPuml/ApplicationIntegration/APIGateway.puml
+!include AWSPuml/ApplicationIntegration/SimpleQueueService.puml
+!include AWSPuml/Storage/SimpleStorageService.puml
+!include AWSPuml/Compute/Lambda.puml
+!include AWSPuml/Compute/AppRunner.puml
+!include AWSPuml/Database/AuroraPostgreSQLInstance.puml
+
+!include AWSPuml/SecurityIdentityCompliance/Cognito.puml
+!include AWSPuml/SecurityIdentityCompliance/SecretsManager.puml
+
+!include AWSPuml/Containers/ElasticContainerRegistry.puml
+
+!include AWSPuml/Groups/AWSCloud.puml
+!include AWSPuml/Groups/VPC.puml
+
+left to right direction
+
+Chat(webhooks_fb, "Facebook", "comments webhook")
+Chat(webhooks_ig, "Instagram", "comments webhook")
+
+AWSCloudGroup(cloud) {
+    APIGateway(webhookgw, "API Gateway", "webhooks")
+    SimpleQueueService(sqs, "SQS Queue", "webhooks")
+    Lambda(lambda, "Webhook Handler", "webhooks")
+    AppRunner(api, "AppRunner API", "webhooks")
+    AuroraPostgreSQLInstance(rds, "RDS Database", "postgres")
+}
+
+webhooks_fb --> webhookgw : json
+webhooks_ig --> webhookgw : json
+
+webhookgw --> sqs
+sqs --> lambda
+lambda --> api #ff0000
+
+api --> rds 
+
+@enduml

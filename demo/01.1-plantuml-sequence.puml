@@ -1,0 +1,16 @@
+@startuml Sequence Demo
+
+server -> aei
+aei -> server
+
+server -> amr
+
+amr -> server     
+
+server -> aei     
+aei -> setup      
+
+aei -> server     
+setup -> aei      
+
+@enduml

@@ -20,8 +20,13 @@ start
 :choose diagram type to suit 
 message and audience;
 
+
 :choose example diagram
 and copy code;
+
+:choothis is a test
+and copy code;
+
 
 while (Is diagram finished?) is (not finished)
     :update diagram code;

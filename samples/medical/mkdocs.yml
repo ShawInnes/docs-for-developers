@@ -13,5 +13,5 @@ plugins:
       num_workers: 8
       puml_keyword: plantuml
 
-# theme:
-#   name: material
+theme:
+  name: material
